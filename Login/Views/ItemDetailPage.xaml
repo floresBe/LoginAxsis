@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Login.Views.ItemDetailPage" Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Clicked="EditItem_Clicked" />
+         <ToolbarItem Text="Delete" Clicked="DeleteItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ScrollView> 
+        <StackLayout Padding="15">
+
+            <Label Text="Usuario" FontSize="Medium" />
+            <Label Text="{Binding Item.Nombre, Mode=TwoWay}" FontSize="Small" />
+        
+            <Label Text="Contraseña" FontSize="Medium" />
+            <Label Text="{Binding Item.Contrasena, Mode=TwoWay}" FontSize="Small" />
+      
+            <Label Text="̃Sexo" FontSize="Medium" />
+            <Label Text="{Binding Item.Sexo, Mode=TwoWay}" FontSize="Small" />
+      
+            <Label Text="Correo Electrónico" FontSize="Medium" />
+            <Label Text="{Binding Item.CorreoElectronico, Mode=TwoWay}" FontSize="Small" />
+        
+            <Label Text="Activo" FontSize="Medium" />
+            <Label Text="{Binding Activo, Mode=TwoWay}" FontSize="Small" />
+
+        </StackLayout>
+    </ScrollView> 
+</ContentPage>

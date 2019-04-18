@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Login.Views.NewItemPage"  Title="{Binding Title}" >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      <ScrollView>  
+            
+            <StackLayout  Padding="15">
+            
+                <Label Text="Usuario" FontSize="Medium"/>
+                <Entry x:Name="UsuarioEntry" Text="{Binding Item.Nombre}" FontSize="Small" Margin="0,0,0,20" MaxLength="7"/>
+            
+                <Label Text="Sexo" FontSize="Medium" />
+                <Picker x:Name="SexoPicker" SelectedItem="{Binding Item.Sexo}" FontSize="Small" Margin="0,0,0,20" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Femenino</x:String>
+                            <x:String>Masculino</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>    
+                </Picker>
+                
+                <Label Text="Correo Electrónico" FontSize="Medium" />
+                <Entry x:Name="eMailEntry" Text="{Binding Item.CorreoElectronico}" FontSize="Small" Margin="0,0,0,20" TextChanged="Email_TextChanged" />
+
+                <Label Text="Contraseña" FontSize="Medium" />
+                <Entry x:Name="ContrasenaEntry" Text="{Binding Item.Contrasena}" FontSize="Small" Margin="0,0,0,20" IsPassword="true"/>
+                
+                <Label Text="Repetir Contraseña" FontSize="Medium" />
+                <Entry x:Name="RContrasenaEntry" FontSize="Small" Margin="0,0,0,20" IsPassword="true" /> 
+           
+                <Label Text="Activo" FontSize="Medium" />
+                <Switch x:Name="swtActivo" IsToggled="{Binding Item.Activo}" Margin="0,0,0,20"/>
+            
+            </StackLayout>
+            
+      </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
